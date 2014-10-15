@@ -59,33 +59,41 @@ $content = ob_get_clean();
 
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="<?=BASEURL?>/css/normalize.css" type="text/css">
-	<link rel="stylesheet" href="<?=BASEURL?>/css/style.css" type="text/css">
-	<title> Notes </title>
-	<script> var baseurl = '<?=BASEURL?>'; </script>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title> Notes </title>
 
-<?php
-include 'views/header.php';
-include 'views/menu.php';
+        <link rel="stylesheet" href="<?=BASEURL?>/assets/css/style.css">
+        <script src="<?=BASEURL?>/assets/js/jquery-2.1.1.min.js"></script>
+        <script src="<?=BASEURL?>/assets/js/script.js"></script>	
 
-if (isset($_SESSION['message'])) {
-	$m = $_SESSION['message'];
-	echo('<div class="message '.$m['type'].'">'.$m['text'].'</div>');
-	unset($_SESSION['message']);
-}
-?>
+        <script>
+            var baseurl = '<?=BASEURL?>';
+        </script>
+    </head>
+    
+    <body>
 
-<main>
-<?php echo $content; ?>
-</main>
+        <?php
+        include 'views/header.php';
+        include 'views/menu.php';
 
-<?php
-include 'views/footer.php';
-?>
+        if (isset($_SESSION['message'])) {
+            $m = $_SESSION['message'];
+            echo('<div class="message ' . $m['type'] . '">' . $m['text'] . '</div>');
+            unset($_SESSION['message']);
+        }
+        ?>
 
-</body>
+        <main>
+            <?php
+                echo $content;
+            ?>
+        </main>
+
+        <?php
+        include 'views/footer.php';
+        ?>
+
+    </body>
 </html>
