@@ -1,206 +1,192 @@
+/**
+ * Certaines règles de nommages peuvent parraitre étranges au premier abord,
+ * elles suivent pourtant une convention (plus ou moins) stricte, grandement
+ * inspirée des BEM CSS. Plus d'informations par ici :
+ * http://www.alsacreations.com/article/lire/1641-bonnes-pratiques-en-css-bem-et-oocss.html
+ */
+
 /* ==Reset */
-
 * {
-	-webkit-box-sizing : border-box;
-	-moz-box-sizing : border-box;
-	box-sizing : border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
-
 html,
 body {
-	margin : 0;
-	padding : 0;
+	margin: 0;
+	padding: 0;
 }
-
 ul,
 ol {
-	padding-left : 0;
-	list-style : none;
+	padding-left: 0;
+	list-style: none;
 }
-
 img {
-	height : auto;
-	border : 0;
-	vertical-align : middle;
+	height: auto;
+	border: 0;
+	vertical-align: middle;
 }
-
 /* ==Typo */
-
 html {
-	font-size : 62.5%;
+	font-size: 62.5%;
 }
-
 body {
-	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-size : 1.6em;
-	line-height : 1.5;
-	color : #222;
-	background-color : #CCC;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 1.6em;
+	line-height: 1.5;
+	color: #222;
+	background-color: #CCC;
 }
-
 a {
-	color : #333333;
+	color: #333333;
 }
-
 h1 {
-	font-family : Helvetica,Arial,sans-serif;
-	font-size : 3.2rem;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 3.2rem;
 }
-
 h2 {
-	font-family : Helvetica,Arial,sans-serif;
-	font-size : 2.8rem;
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 2.8rem;
 }
-
 h3 {
-	font-size : 2.4rem;
+	font-size: 2.4rem;
 }
 /* == avoid repeat */
 .MenuItem-a,
 .Button {
-    -webkit-transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -ms-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    transition: all .3s ease;
+	-webkit-transition: all .3s ease;
+	-moz-transition: all .3s ease;
+	-ms-transition: all .3s ease;
+	-o-transition: all .3s ease;
+	transition: all .3s ease;
 }
 /* ==Base */
-
 .WrapHeader {
-	padding : 1rem;
-	color : #FFF;
-	background-color : #0085E5;
+	padding: 1rem;
+	color: #FFF;
+	background-color: #0085E5;
 }
-    .WrapHeader.note {
-		background-color : #BF0035;
-	}
-	.WrapHeader.note.shared {
-		background-color : #FF9400;
-	}
-    .WrapHeader.user {
-		background-color : #00C040;
-	}
-
+.WrapHeader.note {
+	background-color: #BF0035;
+}
+.WrapHeader.note.shared {
+	background-color: #FF9400;
+}
+.WrapHeader.user {
+	background-color: #00C040;
+}
 .Header-a {
-	text-decoration : none;
-	color : inherit;
+	text-decoration: none;
+	color: inherit;
 }
-
 /* ==UI */
-
 .Button {
-    text-decoration: none;
-    padding: .5rem .8rem;
-    text-align: center;
-    border-radius: 3px;
-    background-color: #666;
-    color:#FFF;
+	padding: .5rem .8rem;
+	border-radius: 3px;
+	text-align: center;
+	text-decoration: none;
+	color: #FFF;
+	background-color: #666;
 }
 .Button:hover {
-    background-color: #444;
+	background-color: #444;
 }
-
+.message {
+	border-radius: 2px;
+	padding: 1rem;
+	border: #555 1px solid;
+	background-color: #F9F9F9;
+}
+	.message.error {
+		border-color: red;
+	}
+	.message.success {
+		border-color: green;
+	}
 /* ==Menu */
-
 .Menu-ul {
-	margin : 0;
-	text-align : center;
-    background-color : #005999;
+	margin: 0;
+	text-align: center;
+	background-color: #005999;
 }
-    .Menu-ul.note {
-		background-color : #730020;
-	}
-	.Menu-ul.note.shared {
-		background-color : #B36800;
-	}
-    .Menu-ul.user {
-		background-color : #009933;
-	}
+.Menu-ul.note {
+	background-color: #730020;
+}
+.Menu-ul.note.shared {
+	background-color: #B36800;
+}
+.Menu-ul.user {
+	background-color: #009933;
+}
 .MenuItem-a {
-	display : block;
-	padding : 1rem;
-    color:#FFF;
-    text-decoration: none;
+	display: block;
+	padding: 1rem;
+	text-decoration: none;
+	color: #FFF;
 }
-
 .MenuItem-a:hover {
-	text-decoration : none;
-	color : #FFF;
+	text-decoration: none;
+	color: #FFF;
 	background-color: #000;
-    background-color: rgba(0, 0, 0, .7);
+	background-color: rgba(0,0,0,.7);
 }
-
 .MenuItem {
-	display : inline-block;
-	text-align : center;
+	display: inline-block;
+	text-align: center;
 }
-
 /* ==Login */
-
 .Logbox {
-	margin : 0 auto;
-	max-width : 300px;
+	margin: 0 auto;
+	max-width: 300px;
 }
-
 .Logbox * {
-	width : 100%;
+	width: 100%;
 }
-
 .fade {
-	margin-top : 1rem;
-	text-align : right;
-	font-style : italic;
+	margin-top: 1rem;
+	text-align: right;
+	font-style: italic;
 }
-
 /* ==Content */
-
 .WrapMain {
-	background-color : #FEFEFE;
+	background-color: #FEFEFE;
 }
-
 .Main {
-	margin : 0 auto;
-	padding : 2rem 1rem;
-	max-width : 960px;
+	margin: 0 auto;
+	padding: 2rem 1rem;
+	max-width: 960px;
 }
-
 .Note {
-    margin: 2rem 0;
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 2px;
-    box-shadow: 0 0 3px #999;
+	margin: 2rem 0;
+	padding: 1rem;
+	border-radius: 2px;
+	background-color: #FFF;
+	box-shadow: 0 0 3px #999;
 }
 .Note-title {
-    margin: 0;
+	margin: 0;
 }
 .Note-button {
-    widows: 250px;
-    margin-left: 1rem;
-    float: right;
+	float: right;
+	margin-left: 1rem;
+	widows: 250px;
 }
-
 .Note-content {
-    padding: 1rem;
+	padding: 1rem;
 }
-
 /* ==Create*/
-
 .CreateNote input,
-.CreateNote textarea{
-    width:100%;
+.CreateNote textarea {
+	width: 100%;
 }
 .CreateNote textarea {
-    resize: vertical
+	resize: vertical;
 }
-
 .Footer {
-	text-align : center;
-	font-size : 1.3rem;
+	text-align: center;
+	font-size: 1.3rem;
 }
-
 /* ==Accessibility */
-
 .hidden {
-	display : none;
+	display: none;
 }

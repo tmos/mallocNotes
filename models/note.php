@@ -113,26 +113,26 @@ class Note extends Model_Base {
         }
     }
     public static function exist_title($title) {
-        $test = false;
+        $t = false;
         $s = self::$_db->prepare('SELECT * FROM notes where title = :t');
         $s->bindValue(':t', $login, PDO::PARAM_STR);
         $s->execute();
         $data = $s->fetch(PDO::FETCH_ASSOC);
         if ($data) {
-            $test = true;
+            $t = true;
         }
-        return $test;
+        return $t;
     }
     public static function exist_creator($creator) {
-        $test = false;
+        $t = false;
         $s = self::$_db->prepare('SELECT * FROM notes where creator = :creator');
         $s->bindValue(':creator', $creator, PDO::PARAM_STR);
         $s->execute();
         $data = $s->fetch(PDO::FETCH_ASSOC);
         if ($data) {
-            $test = true;
+            $t = true;
         }
-        return $test;
+        return $t;
     }
     public static function add_share($id_note, $id_user) {
         $q = self::$_db->prepare('INSERT INTO shares (id_note,id_user) VALUES (:id_note,:id_user)');

@@ -1,5 +1,6 @@
-notes-manager
-=============
+Malloc(sizeof(notes));
+======================
+*Allocate some memory for your notes…*
 
 Choix ergonomiques :
 ====================

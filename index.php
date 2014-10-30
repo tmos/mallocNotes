@@ -40,7 +40,10 @@ if (isset($_SERVER['PATH_INFO'])) {
     include 'views/home.php';
 }
 $content = ob_get_clean();
-// used for CSS classes
+/**
+ * Utilisé pour localiser l'application dans le CSS. J'aurais aimé éviter de dupliquer ce code
+ * (issu du traitement de l'url), mais je n'ai pas réussi à jouer avec la portée des variables…
+ */
 if (isset($_SERVER['PATH_INFO'])) {
     $args = explode('/', $_SERVER['PATH_INFO']);
     $found = false;
@@ -69,7 +72,9 @@ if (isset($_SERVER['PATH_INFO'])) {
 	            <?php
 					if (isset($_SESSION['message'])) {
 					    $m = $_SESSION['message'];
-					    echo ('<div class="message ' . $m['type'] . '">' . $m['text'] . '</div>');
+					    echo ('<div class="' . $m['type'] . '">');
+                            echo($m['text']);
+                        echo('</div>');
 					    unset($_SESSION['message']);
 					}
 					echo ($content);

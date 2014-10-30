@@ -12,11 +12,11 @@
         <input type="password" id="newPassword2" name="newPassword2" placeholder="New password repetition">
 
     <h3>Modify mail</h3>
-        <label for="updateEmail" class="hidden">New mail</label>
-        <input type="updateEmail" id="updateEmail" name="updateEmail" placeholder="New mail"><br>
+        <label for="updateMail" class="hidden">New mail</label>
+        <input type="text" id="updateMail" name="updateEmail" placeholder="New mail"><br>
 
-        <label for="update2Password" class="hidden">Password check</label>
-        <input type="update2Password" id="update2Password" name="update2Password" placeholder="Password"><br>
+        <label for="updateMailPassword" class="hidden">Password check</label>
+        <input type="password" id="updateMailPassword" name="updateMailPassword" placeholder="Password"><br>
 
     <input type="submit" value="Save">
 </form>

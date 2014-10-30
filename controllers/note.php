@@ -82,7 +82,7 @@ class Controller_Note {
                         show_message('message success', 'Note successfuly deleted.');
                         $this->mine();
                     } else {
-                        show_message('message error', 'Error deleting note');
+                        show_message('message error', 'Error while deleting note');
                         $note = Note::get_by_id($id_note);
                         include 'views/edit';
                     }

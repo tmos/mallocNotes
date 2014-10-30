@@ -1,2 +1,5 @@
 <h3 class="PageTitle">Welcome</h3>
-<p>Vous êtes sur la page d'accueil. Elle ne sert à rien du tout en l'état, j'aurais bien aimé y afficher la dernière note créé ainsi que la dernière note partagée, mais bon on a une maquette de T3 à rendre la semaine prochaine…</p>
+<p>
+    <b>Malloc(sizeof(notes));</b> est un service de stockage de notes KISS : keep-it-super-simple.
+    <br>Ou plutôt keep-it-super-stupid, parceque bon c'est sympa mais c'est pas non plus révolutionnaire !
+</p>
