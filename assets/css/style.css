@@ -55,14 +55,29 @@ h2 {
 h3 {
 	font-size : 2.4rem;
 }
-
+/* == avoid repeat */
+.MenuItem-a {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
 /* ==Base */
 
 .Header {
 	padding : 1rem;
-	color : #DDD;
-	background-color : #222;
+	color : #FFF;
+	background-color : #0085E5;
 }
+    .Header.note {
+		color : #FFF;
+		background-color : #BF0035;
+	}
+	.Header.note.shared {
+		color : #FFF;
+		background-color : #FF9400;
+	}
 
 .Header-a {
 	text-decoration : none;
@@ -73,20 +88,27 @@ h3 {
 
 .Menu-ul {
 	margin : 0;
-	padding : .5rem;
 	text-align : center;
+    background-color : #005999;
 }
+    .Menu-ul.note {
+		background-color : #730020;
+	}
+	.Menu-ul.note.shared {
+		background-color : #B36800;
+	}
 
 .MenuItem-a {
 	display : block;
 	padding : 1rem;
+    color:#FFF;
+    text-decoration: none;
 }
 
 .MenuItem-a:hover {
-	border-radius : 2px;
 	text-decoration : none;
 	color : #FFF;
-	background-color : #111;
+	background-color: rgba(0, 0, 0, .7);
 }
 
 .MenuItem {
@@ -109,13 +131,12 @@ h3 {
 	margin-top : 1rem;
 	text-align : right;
 	font-style : italic;
-	color : #808080;
 }
 
 /* ==Content */
 
 .Wrap {
-	background-color : #DDDDDD;
+	background-color : #FEFEFE;
 }
 
 .Main {
@@ -124,6 +145,16 @@ h3 {
 	max-width : 960px;
 }
 
+.Note {
+    margin: 2rem 0;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 2px;
+    box-shadow: 0px 0px 3px #999;
+}
+.Note-content {
+    padding: 1rem;
+}
 /**/
 
 .Footer {

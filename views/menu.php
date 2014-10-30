@@ -1,6 +1,6 @@
 <aside>
     <nav class="Menu">
-        <ul class="Menu-ul">
+        <ul class="Menu-ul <?=$whereami?>">
 			<li class="MenuItem"><a class="MenuItem-a" href="<?=BASEURL?>">Home</a></li>
 			<?php 
 				if (user_connected()) {

@@ -53,21 +53,23 @@ if(isset($_SERVER['PATH_INFO'])) {
 
 $content = ob_get_clean();
 
+// used for CSS classes
+if(isset($_SERVER['PATH_INFO'])) {
+	$args = explode('/', $_SERVER['PATH_INFO']);
+	$found = false;
+
+	if(count($args) >= 3) {
+		$whereami = $args[1]." ".$args[2];
+	}
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title> Notes </title>
-
+        <title>Malloc(sizeof(notes));</title>
         <link rel="stylesheet" href="<?=BASEURL?>/assets/css/style.css">
-        <script src="<?=BASEURL?>/assets/js/jquery-2.1.1.min.js"></script>
-        <script src="<?=BASEURL?>/assets/js/script.js"></script>
-
-        <script>
-            var baseurl = '<?=BASEURL?>';
-        </script>
     </head>
 
     <body>

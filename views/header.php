@@ -1,6 +1,7 @@
-<header class="Header">
+<header class="Header <?=$whereami?>">
     <a class="Header-a" href="<?=BASEURL?>">
-        <h1 class="AppTitle">Malloc(notes)</h1>
+
+        <h1 class="AppTitle">Malloc(sizeof(notes));</h1>
     </a>
-    <div class="fade">Réservez de la mémoire pour vos notes…</div>
+    <div class="fade">Allocate some memory for your notes…</div>
 </header>
