@@ -61,18 +61,18 @@ h3 {
 	transition: all .3s ease;
 }
 /* ==Base */
-.WrapHeader {
+.Header {
 	padding: 1rem;
 	color: #FFF;
 	background-color: #0085E5;
 }
-.WrapHeader.note {
+.Header.note {
 	background-color: #BF0035;
 }
-.WrapHeader.note.shared {
+.Header.note.shared {
 	background-color: #FF9400;
 }
-.WrapHeader.user {
+.Header.user {
 	background-color: #00C040;
 }
 .Header-a {

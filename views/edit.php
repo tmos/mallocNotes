@@ -1,5 +1,4 @@
-<h3 class="text-center">Edit note</h3>
-
+<h2>Edit note</h2>
 <form class="CreateNote" method="post" action="<?=BASEURL ?>/index.php/note/edit/<?=$note->id() ?>">
     <label for="title" class="hidden">Note title</label>
     <input type="text" name="title" value="<?=$note->title() ?>">
@@ -9,7 +8,8 @@
 
     <input type="submit" value="Edit">
 </form>
-<h3>Share</h3>
+
+<h2>Share</h2>
 <form method="post" action="<?=BASEURL ?>/index.php/note/edit_share/<?=$note->id() ?>">
     <label for="sharedwith" class="hidden">Shared with</label>
     <?php
@@ -21,7 +21,8 @@
     ?>
     <input type="submit" value="Share">
 </form>
-<h3>Delete</h3>
+
+<h2>Delete</h2>
 <form method="post" action="<?=BASEURL
 ?>/index.php/note/delete/<?=$note->id() ?>">
         <input type="submit" value="Delete">

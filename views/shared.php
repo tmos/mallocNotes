@@ -1,5 +1,5 @@
-<h3>Notes shared with me</h3>
-  <?php
+<h2>Notes shared with me</h2>
+<?php
 if ($data) {
     foreach ($data as $note) {
         echo '<article class="Note">';
@@ -15,6 +15,6 @@ if ($data) {
         echo '</article>';
     }
 } else {
-    echo '<p class="text-center">No notes here now...</p>';
+    echo '<p>Nobody shared a note with you... You should bring your friends here !</p>';
 }
 ?>

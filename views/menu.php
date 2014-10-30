@@ -1,7 +1,6 @@
 <aside>
     <nav class="Menu">
         <ul class="Menu-ul <?=$whereami?>">
-
 			<?php
 				if (user_connected()) {
 			?>

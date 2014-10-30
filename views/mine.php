@@ -1,4 +1,4 @@
-<h3 class="text-center">My notes <span class="subtitle"></h3>
+<h2>My notes <span class="subtitle"></h2>
 <a class="Button" href="<?=BASEURL ?>/index.php/note/create">Create new note</a>
 <?php
 if ($data) {
@@ -14,6 +14,6 @@ if ($data) {
         echo '</article>';
     }
 } else {
-    echo '<p class="text-center">No notes yet :(</p>';
+    echo '<p>You don\'t have any notes yet :(</p>';
 }
 ?>

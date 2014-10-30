@@ -1,4 +1,4 @@
-<h2 class="PageTitle">Inscription</h2>
+<h2>Inscription</h2>
 
 <div class="Logbox">
     <form class="Logbox-form" method="post" action="signup">

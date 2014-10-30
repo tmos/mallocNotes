@@ -1,4 +1,4 @@
-<h2 class="PageTitle">Connection</h2>
+<h2>Connection</h2>
 
 <div class="Logbox">
     <form class="Logbox-form" method="post" action="signin">
