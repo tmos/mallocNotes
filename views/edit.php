@@ -1,40 +1,28 @@
-<h1 class="text-center">Edit note</h1>
-<form method="post" action="<?=BASEURL?>/index.php/note/edit/<?=$note->id()?>">
-    <div class="formline">
-        <label for="title">Note title</label>
-        <input type="text" name="title" value="<?=$note->title()?>">
-    </div>
-    <div class="formline">
-        <label for="text">Note text (300 max)</label>
-        <textarea name="value" rows="10"><?=$note->value()?></textarea>
-    </div>
-    <div class="formline">
-        <label></label>
-        <input type="submit" value="Edit">
-    </div>
-</form>
+<h3 class="text-center">Edit note</h3>
 
-<form method="post" action="<?=BASEURL?>/index.php/note/edit_share/<?=$note->id()?>">
-    <div class="formline">
-        <label>Shared with</label>
-        <?php
-        if($list_user != null) {
-            echo '<input type="text" name="share" value='.$list_user.'>';
-        }
-        else {
-            echo '<input type="text" name="share" placeholder="login,login,login...">';
-        }
-        ?>
-    </div>
-    <div class="formline">
-        <label></label>
-        <input type="submit" value="Share">
-    </div>
-</form>
+<form class="CreateNote" method="post" action="<?=BASEURL ?>/index.php/note/edit/<?=$note->id() ?>">
+    <label for="title" class="hidden">Note title</label>
+    <input type="text" name="title" value="<?=$note->title() ?>">
 
-<form class="noborder" method="post" action="<?=BASEURL?>/index.php/note/delete/<?=$note->id()?>">
-    <div class="formline">
-        <label></label>
+    <label for="text" class="hidden">Content</label>
+    <textarea name="value" rows="10"><?=$note->value() ?></textarea>
+
+    <input type="submit" value="Edit">
+</form>
+<h3>Share</h3>
+<form method="post" action="<?=BASEURL ?>/index.php/note/edit_share/<?=$note->id() ?>">
+    <label for="sharedwith" class="hidden">Shared with</label>
+    <?php
+        if ($list_user != null) {
+            echo '<input id="sharedwith" type="text" name="share" value=' . $list_user . '>';
+        } else {
+            echo '<input id="sharedwith" type="text" name="share" placeholder="login,login,login...">';
+        }
+    ?>
+    <input type="submit" value="Share">
+</form>
+<h3>Delete</h3>
+<form method="post" action="<?=BASEURL
+?>/index.php/note/delete/<?=$note->id() ?>">
         <input type="submit" value="Delete">
-    </div>
 </form>

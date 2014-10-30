@@ -2,11 +2,12 @@
     <nav class="Menu">
         <ul class="Menu-ul <?=$whereami?>">
 			<li class="MenuItem"><a class="MenuItem-a" href="<?=BASEURL?>">Home</a></li>
-			<?php 
+			<?php
 				if (user_connected()) {
 			?>
 				<li class="MenuItem"><a class="MenuItem-a" href="<?=BASEURL?>/index.php/note/mine">My notes</a></li>
 				<li class="MenuItem"><a class="MenuItem-a" href="<?=BASEURL?>/index.php/note/shared">Shared with me</a></li>
+				<li class="MenuItem"><a class="MenuItem-a" href="<?=BASEURL?>/index.php/user/account">Account</a></li>
 				<li class="MenuItem"><a class="MenuItem-a" href="<?=BASEURL?>/index.php/user/signout">Sign out</a></li>
 			<?php
 				}

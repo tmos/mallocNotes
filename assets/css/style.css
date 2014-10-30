@@ -56,7 +56,8 @@ h3 {
 	font-size : 2.4rem;
 }
 /* == avoid repeat */
-.MenuItem-a {
+.MenuItem-a,
+.Button {
     -webkit-transition: all .3s ease;
     -moz-transition: all .3s ease;
     -ms-transition: all .3s ease;
@@ -65,23 +66,38 @@ h3 {
 }
 /* ==Base */
 
-.Header {
+.WrapHeader {
 	padding : 1rem;
 	color : #FFF;
 	background-color : #0085E5;
 }
-    .Header.note {
-		color : #FFF;
+    .WrapHeader.note {
 		background-color : #BF0035;
 	}
-	.Header.note.shared {
-		color : #FFF;
+	.WrapHeader.note.shared {
 		background-color : #FF9400;
+	}
+    .WrapHeader.user {
+		background-color : #00C040;
 	}
 
 .Header-a {
 	text-decoration : none;
 	color : inherit;
+}
+
+/* ==UI */
+
+.Button {
+    text-decoration: none;
+    padding: .5rem .8rem;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #666;
+    color:#FFF;
+}
+.Button:hover {
+    background-color: #444;
 }
 
 /* ==Menu */
@@ -97,7 +113,9 @@ h3 {
 	.Menu-ul.note.shared {
 		background-color : #B36800;
 	}
-
+    .Menu-ul.user {
+		background-color : #009933;
+	}
 .MenuItem-a {
 	display : block;
 	padding : 1rem;
@@ -108,7 +126,8 @@ h3 {
 .MenuItem-a:hover {
 	text-decoration : none;
 	color : #FFF;
-	background-color: rgba(0, 0, 0, .7);
+	background-color: #000;
+    background-color: rgba(0, 0, 0, .7);
 }
 
 .MenuItem {
@@ -135,7 +154,7 @@ h3 {
 
 /* ==Content */
 
-.Wrap {
+.WrapMain {
 	background-color : #FEFEFE;
 }
 
@@ -150,12 +169,30 @@ h3 {
     padding: 1rem;
     background-color: #fff;
     border-radius: 2px;
-    box-shadow: 0px 0px 3px #999;
+    box-shadow: 0 0 3px #999;
 }
+.Note-title {
+    margin: 0;
+}
+.Note-button {
+    widows: 250px;
+    margin-left: 1rem;
+    float: right;
+}
+
 .Note-content {
     padding: 1rem;
 }
-/**/
+
+/* ==Create*/
+
+.CreateNote input,
+.CreateNote textarea{
+    width:100%;
+}
+.CreateNote textarea {
+    resize: vertical
+}
 
 .Footer {
 	text-align : center;
