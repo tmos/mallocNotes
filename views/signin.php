@@ -1,4 +1,4 @@
-<h2 class="PageTitle">Page de connexion</h2>
+<h2 class="PageTitle">Connexion</h2>
 
 <div class="Logbox">
     <form class="Logbox-form" method="post" action="signin">
@@ -10,7 +10,3 @@
         <input type="submit">
     </form>
 </div>
-
-<a href="<?=BASEURL?>/index.php/user/signup">Inscription ?</a>
-
-

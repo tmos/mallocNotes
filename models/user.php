@@ -56,13 +56,13 @@ class User extends Model_Base
 	}
 
 
-	public static function insert($login,$password,$email) 
+	public static function insert($login,$password,$email)
 	{
 		$q = self::$_db->prepare('INSERT INTO users (login, password, email) VALUES (:login,:password, :email)');
 		$q->bindValue(':login', $login, PDO::PARAM_STR);
-		$q->bindValue(':password', $password, PDO::PARAM_STR);		
-		$q->bindValue(':email', $email, PDO::PARAM_STR);	
-		$q->execute();		
+		$q->bindValue(':password', $password, PDO::PARAM_STR);
+		$q->bindValue(':email', $email, PDO::PARAM_STR);
+		$q->execute();
 	}
 
 	public function save()
@@ -73,7 +73,7 @@ class User extends Model_Base
 			$q->bindValue(':id', $this->_id, PDO::PARAM_INT);
 			$q->bindValue(':login', $this->_login, PDO::PARAM_STR);
 			$q->bindValue(':password', $this->_password, PDO::PARAM_STR);
-			$q->bindValue(':email', $this->_email, PDO::PARAM_STR);						
+			$q->bindValue(':email', $this->_email, PDO::PARAM_STR);
 			$q->execute();
 		}
 	}
@@ -96,7 +96,8 @@ class User extends Model_Base
 		$data = $s->fetch(PDO::FETCH_ASSOC);
 		if ($data) {
 			return new User($data['id'],$data['login'],$data['password'],$data['email']);
-		} else {
+		}
+		else {
 			return null;
 		}
 	}
@@ -108,7 +109,8 @@ class User extends Model_Base
 		$data = $s->fetch(PDO::FETCH_ASSOC);
 		if ($data) {
 			return new User($data['id'],$data['login'],$data['password'],$data['email']);
-		} else {
+		}
+		else {
 			return null;
 		}
 	}

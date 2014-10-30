@@ -1,10 +1,8 @@
 <?php
 
-define('SQL_DSN',      'mysql:host=localhost;dbname=user_php_iut;charset=utf8');
-define('SQL_USERNAME', 'user_php_iut');
-define('SQL_PASSWORD', 'w5PWxXB3Zmv9Xs7C');
 
-require_once 'global/utils.php';
+require_once 'global/config.php';
+require_once 'global/tools.php';
 require_once 'models/base.php';
 
 $db = new PDO(SQL_DSN, SQL_USERNAME, SQL_PASSWORD);
@@ -77,16 +75,15 @@ $content = ob_get_clean();
         <?php
         include 'views/header.php';
         include 'views/menu.php';
-
-        if (isset($_SESSION['message'])) {
-            $m = $_SESSION['message'];
-            echo('<div class="message ' . $m['type'] . '">' . $m['text'] . '</div>');
-            unset($_SESSION['message']);
-        }
         ?>
 		<div class="Wrap">
 	        <main class="Wrap-main Main">
 	            <?php
+        	        if (isset($_SESSION['message'])) {
+						$m = $_SESSION['message'];
+						echo('<div class="message ' . $m['type'] . '">' . $m['text'] . '</div>');
+						unset($_SESSION['message']);
+					}
 	                echo $content;
 	            ?>
 	        </main>

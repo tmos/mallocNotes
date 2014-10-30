@@ -8,11 +8,10 @@ class Controller_User
 		switch ($_SERVER['REQUEST_METHOD']) {
 			case 'GET' :
 				if (isset($_SESSION['user'])) {
-					$_SESSION['user'] = $u->login();
-					$_SESSION['message']['type'] = 'message';
-					$_SESSION['message']['text'] = 'Vous êtes déjà connectés en tant que '.$_SESSION['user'];
-					include 'views/signin.php';
-				} else {
+					show_message('message success',"You're already connected as ".$_SESSION['user']);
+					include 'views/home.php';
+				}
+				else {
 					include 'views/signin.php';
 				}
 				break;
@@ -21,63 +20,63 @@ class Controller_User
 				if (isset($_POST['login']) && isset($_POST['password'])) {
 					$u = User::get_by_login($_POST['login']);
 					if (!is_null($u)) {
-						if ($u->password() == $_POST['password'])
+						if ($u->password() == sha1($_POST['password']))
 						{
 							$_SESSION['user'] = $u->login();
-							$_SESSION['message']['type'] = 'message';
-							$_SESSION['message']['text'] = 'Vous êtes connecté(e)';
-							include 'views/home.php';
+							show_message('message success',"You're connected");
+							header('Location: '.BASEURL.'/index.php/note/mine');
 						}
-						else
-						{
-							$_SESSION['message']['type'] = 'error';
-							$_SESSION['message']['text'] = 'Login ou mot de passe erroné!';
+						else {
+							show_message('message error',"Login or password false");
 							include 'views/signin.php';
 						}
-					} else {
-						$_SESSION['message']['type'] = 'error';
-						$_SESSION['message']['text'] = 'Login ou mot de passe erroné!';
+					}
+					else {
+						show_message('message error',"Login or password false");
 						include 'views/signin.php';
 					}
-				} else {
-						$_SESSION['message']['type'] = 'error';
-						$_SESSION['message']['text'] = 'Données incomplètes';
+				}
+				else {
+						show_message('message error',"Incomplete data!");
 						include 'views/signin.php';
 				}
 				break;
-		}	
+		}
 	}
 
 	public function signup() {
 		switch ($_SERVER['REQUEST_METHOD']) {
 			case 'GET' :
 				if (isset($_SESSION['user'])) {
-					$_SESSION['message']['type'] = 'error';
-					$_SESSION['message']['text'] = 'Vous êtes déjà connectés en tant que '.$_SESSION['user'];
+					show_message('message success',"You're already connected as ".$_SESSION['user']);
 					include 'views/home.php';
-				} else {
+				}
+				else {
 					include 'views/signup.php';
 				}
 				break;
 
 			case 'POST' :
-				if (isset($_POST['login']) && isset($_POST['password'])) {
+				if (isset($_POST['login']) && isset($_POST['password']) && isset($_POST['password_check'])) {
 					$exist = User::exist_login($_POST['login']);
 					if (!$exist) {
-						User::insert($_POST['login'],$_POST['password'],$_POST['email']);
-						$_SESSION['message']['type'] = 'message';
-						$_SESSION['message']['text'] = 'Inscription de '.$_POST['login'].' effectuée';
-						include 'views/home.php';
+						if($_POST['password'] == $_POST['password_check']) {
+							User::insert(htmlspecialchars($_POST['login']),sha1($_POST['password']),htmlspecialchars($_POST['email']));
+							show_message('message success',"Signup of  ".$_POST['login'].' !');
+							include 'views/signin.php';
+						}
+						else {
+							show_message('message error',"Not same password");
+							include 'views/signup.php';
+						}
 					}
-					else 
-					{
-						$_SESSION['message']['type'] = 'error';
-						$_SESSION['message']['text'] = 'Login donné déjà existant dans la base';
+					else {
+						show_message('message error',"This username already exists, please choose another one.");
 						include 'views/signup.php';
 					}
-				} else {
-						$_SESSION['message']['type'] = 'error';
-						$_SESSION['message']['text'] = 'Données incomplètes';
+				}
+				else {
+						show_message('message error',"Incomplete data!");
 						include 'views/signup.php';
 				}
 				break;
@@ -87,11 +86,11 @@ class Controller_User
 
 	public function signout() {
 		unset($_SESSION['user']);
-		$_SESSION['message']['type'] = 'error';
-		$_SESSION['message']['text'] = 'Vous êtes bien déconnecté(e)';
 		header('Location: '.BASEURL.'/index.php');
 	}
 
+	/* Provient du début de l'exercice sur les Users
+	Ce code est buggé
 	public function profil() {
 		switch ($_SERVER['REQUEST_METHOD']) {
 			case 'GET' :
@@ -100,7 +99,6 @@ class Controller_User
 					$emailProfil = $u->email();
 					include 'views/profil.php';
 				} else {
-					$message_connexion = "";
 					include 'views/signin.php';
 				}
 				break;
@@ -137,11 +135,5 @@ class Controller_User
 				}
 				break;
 		}
-		// TODO
-		// - si accès en GET et client connecté :
-		//   affiche les infos du user et un formulaire permettant de les mettre à jour
-		//   (on demande le mot de passe actuel pour toute modification d'information)
-		// - si accès en POST :
-		//   gestion de la mise à jour des informations
-	}
+	} */
 }
