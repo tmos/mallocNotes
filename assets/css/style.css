@@ -1,98 +1,138 @@
 /* ==Reset */
-    * {
-        -webkit-box-sizing: border-box;
-           -moz-box-sizing: border-box;
-                box-sizing: border-box;
-    }
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    ul,
-    ol {
-        list-style: none;
-        padding-left: 0;
-    }
 
-    img {
-        height: auto;
-        vertical-align: middle;
-        border: 0;
-    }
-    blockquote,
-    figure {
-        margin-left: 0;
-        margin-right: 0;
-    }
-    audio,
-    canvas,
-    video {
-        display: inline-block;
-    }
+* {
+	-webkit-box-sizing : border-box;
+	-moz-box-sizing : border-box;
+	box-sizing : border-box;
+}
+
+html,
+body {
+	margin : 0;
+	padding : 0;
+}
+
+ul,
+ol {
+	padding-left : 0;
+	list-style : none;
+}
+
+img {
+	height : auto;
+	border : 0;
+	vertical-align : middle;
+}
+
 /* ==Typo */
-    html {
-        font-size: 62.5%;
-    }
-    body {
-        font-size: 1.6em;
-        background-color: #DDD;
-        color: #222;
-        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-        line-height: 1.5;
-    }
-    a {
-        color: #333333;
-    }
 
-    h1 {
-        font-size: 3.2rem;
-        font-family: Helvetica, Arial, sans-serif;
-    }
-    h2 {
-        font-size: 2.8rem;
-        font-family: Helvetica, Arial, sans-serif;
-    }
-    h3 {
-        font-size: 2.4rem;
-    }
+html {
+	font-size : 62.5%;
+}
+
+body {
+	font-family : "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size : 1.6em;
+	line-height : 1.5;
+	color : #222;
+	background-color : #CCC;
+}
+
+a {
+	color : #333333;
+}
+
+h1 {
+	font-family : Helvetica,Arial,sans-serif;
+	font-size : 3.2rem;
+}
+
+h2 {
+	font-family : Helvetica,Arial,sans-serif;
+	font-size : 2.8rem;
+}
+
+h3 {
+	font-size : 2.4rem;
+}
+
 /* ==Base */
-    .Header {
-        padding: 1rem;
-        background-color: #222;
-        color: #DDD;
-    }
-    .Header-a {
-        color:inherit;
-        text-decoration: none;
-    }
+
+.Header {
+	padding : 1rem;
+	color : #DDD;
+	background-color : #222;
+}
+
+.Header-a {
+	text-decoration : none;
+	color : inherit;
+}
 
 /* ==Menu */
-    .Menu-ul {
-        text-align: center;
-    }
-    .MenuItem {
-        display: inline-block;
-        text-align: center;
-        padding: 1rem;
-    }
+
+.Menu-ul {
+	margin : 0;
+	padding : .5rem;
+	text-align : center;
+}
+
+.MenuItem-a {
+	display : block;
+	padding : 1rem;
+}
+
+.MenuItem-a:hover {
+	border-radius : 2px;
+	text-decoration : none;
+	color : #FFF;
+	background-color : #111;
+}
+
+.MenuItem {
+	display : inline-block;
+	text-align : center;
+}
 
 /* ==Login */
-    .Logbox {
-        max-width: 300px;
-        margin:0 auto;
-    }
-    .Logbox * {
-        width:100%;
-    }
-    .fade {
-        margin-top: 1rem;
-        text-align: right;
-        font-style: italic;
-        color:grey;
-    }
+
+.Logbox {
+	margin : 0 auto;
+	max-width : 300px;
+}
+
+.Logbox * {
+	width : 100%;
+}
+
+.fade {
+	margin-top : 1rem;
+	text-align : right;
+	font-style : italic;
+	color : #808080;
+}
+
+/* ==Content */
+
+.Wrap {
+	background-color : #DDDDDD;
+}
+
+.Main {
+	margin : 0 auto;
+	padding : 2rem 1rem;
+	max-width : 960px;
+}
+
+/**/
+
+.Footer {
+	text-align : center;
+	font-size : 1.3rem;
+}
 
 /* ==Accessibility */
-    .hidden {
-        display: none;
-    }
+
+.hidden {
+	display : none;
+}

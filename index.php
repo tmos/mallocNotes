@@ -27,7 +27,7 @@ if(isset($_SERVER['PATH_INFO'])) {
 		$controller = $args[1];
 		$method = $args[2];
 		$params = array();
-		for ($i=3; $i < count($args); $i++) { 
+		for ($i=3; $i < count($args); $i++) {
 			$params[] = $args[$i];
 		}
 
@@ -65,13 +65,13 @@ $content = ob_get_clean();
 
         <link rel="stylesheet" href="<?=BASEURL?>/assets/css/style.css">
         <script src="<?=BASEURL?>/assets/js/jquery-2.1.1.min.js"></script>
-        <script src="<?=BASEURL?>/assets/js/script.js"></script>	
+        <script src="<?=BASEURL?>/assets/js/script.js"></script>
 
         <script>
             var baseurl = '<?=BASEURL?>';
         </script>
     </head>
-    
+
     <body>
 
         <?php
@@ -84,12 +84,13 @@ $content = ob_get_clean();
             unset($_SESSION['message']);
         }
         ?>
-
-        <main>
-            <?php
-                echo $content;
-            ?>
-        </main>
+		<div class="Wrap">
+	        <main class="Wrap-main Main">
+	            <?php
+	                echo $content;
+	            ?>
+	        </main>
+		</div>
 
         <?php
         include 'views/footer.php';
